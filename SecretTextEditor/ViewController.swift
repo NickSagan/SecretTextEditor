@@ -48,5 +48,14 @@ class ViewController: UIViewController {
             secret.text = text
         }
     }
+    
+    @objc func saveSecretMessage() {
+        guard secret.isHidden == false else { return }
+
+        KeychainWrapper.standard.set(secret.text, forKey: "SecretMessage")
+        secret.resignFirstResponder()
+        secret.isHidden = true
+        title = "Nothing to see here"
+    }
 }
 
