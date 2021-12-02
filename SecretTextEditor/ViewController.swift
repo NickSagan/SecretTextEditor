@@ -17,9 +17,11 @@ class ViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(saveSecretMessage), name: UIApplication.willResignActiveNotification, object: nil)
     }
 
     @IBAction func authenticateTapped(_ sender: UIButton) {
+        unlockSecretMessage()
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
@@ -40,19 +42,21 @@ class ViewController: UIViewController {
         secret.scrollRangeToVisible(selectedRange)
     }
     
+    // Load from keychain
     func unlockSecretMessage() {
         secret.isHidden = false
         title = "SecretText"
 
-        if let text = KeychainWrapper.standard.string(forKey: "SecretMessage") {
+        if let text = KeychainWrapper.standard.string(forKey: "SecretText") {
             secret.text = text
         }
     }
     
+    // Save to keychain
     @objc func saveSecretMessage() {
         guard secret.isHidden == false else { return }
 
-        KeychainWrapper.standard.set(secret.text, forKey: "SecretMessage")
+        KeychainWrapper.standard.set(secret.text, forKey: "SecretText")
         secret.resignFirstResponder()
         secret.isHidden = true
         title = "Nothing to see here"
