@@ -13,6 +13,7 @@
 		91CE43CD2757CEBB00E4A620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CE43CB2757CEBB00E4A620 /* Main.storyboard */; };
 		91CE43CF2757CEBF00E4A620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91CE43CE2757CEBF00E4A620 /* Assets.xcassets */; };
 		91CE43D22757CEBF00E4A620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CE43D02757CEBF00E4A620 /* LaunchScreen.storyboard */; };
+		91CE43DA2758F56E00E4A620 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE43D92758F56E00E4A620 /* KeychainItemAccessibility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		91CE43CE2757CEBF00E4A620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91CE43D12757CEBF00E4A620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91CE43D32757CEBF00E4A620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91CE43D92758F56E00E4A620 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				91CE43C52757CEBB00E4A620 /* AppDelegate.swift */,
 				91CE43C72757CEBB00E4A620 /* SceneDelegate.swift */,
+				91CE43D92758F56E00E4A620 /* KeychainItemAccessibility.swift */,
 				91CE43C92757CEBB00E4A620 /* ViewController.swift */,
 				91CE43CB2757CEBB00E4A620 /* Main.storyboard */,
 				91CE43CE2757CEBF00E4A620 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91CE43CA2757CEBB00E4A620 /* ViewController.swift in Sources */,
+				91CE43DA2758F56E00E4A620 /* KeychainItemAccessibility.swift in Sources */,
 				91CE43C62757CEBB00E4A620 /* AppDelegate.swift in Sources */,
 				91CE43C82757CEBB00E4A620 /* SceneDelegate.swift in Sources */,
 			);
