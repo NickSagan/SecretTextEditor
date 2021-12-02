@@ -39,5 +39,14 @@ class ViewController: UIViewController {
         let selectedRange = secret.selectedRange
         secret.scrollRangeToVisible(selectedRange)
     }
+    
+    func unlockSecretMessage() {
+        secret.isHidden = false
+        title = "SecretText"
+
+        if let text = KeychainWrapper.standard.string(forKey: "SecretMessage") {
+            secret.text = text
+        }
+    }
 }
 
