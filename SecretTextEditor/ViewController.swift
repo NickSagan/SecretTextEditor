@@ -20,7 +20,10 @@ class ViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(saveSecretMessage), name: UIApplication.willResignActiveNotification, object: nil)
     }
-
+    @IBAction func cancelTapped(_ sender: Any) {
+        saveSecretMessage()
+    }
+    
     @IBAction func authenticateTapped(_ sender: UIButton) {
         let context = LAContext()
         var error: NSError?
@@ -37,7 +40,7 @@ class ViewController: UIViewController {
                     } else {
                         let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(ac, animated: true)
+                        self?.present(ac, animated: true)
                     }
                 }
             }
