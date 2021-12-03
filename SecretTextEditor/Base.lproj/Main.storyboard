@@ -32,11 +32,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-lD-FbY">
+                                <rect key="frame" x="157" y="431" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="i7X-Gt-yIe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <action selector="pinEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="b2d-gr-8HI"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pKR-lD-FbY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K4b-J9-AeM"/>
                             <constraint firstItem="Ee6-lO-fhG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NTX-og-uCJ"/>
+                            <constraint firstItem="pKR-lD-FbY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NnE-FV-psu"/>
                             <constraint firstItem="Ee6-lO-fhG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mqz-Yb-FxE"/>
                         </constraints>
                     </view>
@@ -48,6 +61,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pin" destination="pKR-lD-FbY" id="lnP-2e-bfX"/>
                         <outlet property="secret" destination="auh-GB-jke" id="oAG-Fh-K6z"/>
                     </connections>
                 </viewController>
