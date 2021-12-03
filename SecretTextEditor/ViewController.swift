@@ -9,8 +9,12 @@ import UIKit
 import LocalAuthentication
 
 class ViewController: UIViewController {
+    
+    var userPin = "6666"
 
+    @IBOutlet weak var pin: UITextField!
     @IBOutlet weak var secret: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +39,7 @@ class ViewController: UIViewController {
                 [weak self] success, authenticationError in
 
                 DispatchQueue.main.async {
-                    if success {
+                    if success && self?.pin.text == self?.userPin {
                         self?.unlockSecretMessage()
                     } else {
                         let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
