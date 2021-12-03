@@ -24,9 +24,13 @@
                                     <action selector="authenticateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="McJ-RC-S6w"/>
                                 </connections>
                             </button>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="auh-GB-jke">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-lD-FbY">
+                                <rect key="frame" x="153.5" y="417" width="107" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="auh-GB-jke">
                                 <rect key="frame" x="20" y="88" width="374" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -36,7 +40,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="auh-GB-jke" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5kG-bG-YPn"/>
+                            <constraint firstItem="Ee6-lO-fhG" firstAttribute="top" secondItem="pKR-lD-FbY" secondAttribute="bottom" constant="8.5" id="ALp-qA-ZFE"/>
+                            <constraint firstItem="auh-GB-jke" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IKd-LK-cGQ"/>
+                            <constraint firstItem="auh-GB-jke" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JHK-fU-4Pu"/>
                             <constraint firstItem="Ee6-lO-fhG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NTX-og-uCJ"/>
+                            <constraint firstItem="auh-GB-jke" firstAttribute="centerX" secondItem="Ee6-lO-fhG" secondAttribute="centerX" id="cDW-yF-zGr"/>
+                            <constraint firstItem="pKR-lD-FbY" firstAttribute="width" secondItem="Ee6-lO-fhG" secondAttribute="width" id="hrw-xN-NUA"/>
+                            <constraint firstItem="pKR-lD-FbY" firstAttribute="centerX" secondItem="auh-GB-jke" secondAttribute="centerX" id="lcS-fG-zWg"/>
                             <constraint firstItem="Ee6-lO-fhG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mqz-Yb-FxE"/>
                         </constraints>
                     </view>
@@ -48,6 +59,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pin" destination="pKR-lD-FbY" id="lnP-2e-bfX"/>
                         <outlet property="secret" destination="auh-GB-jke" id="oAG-Fh-K6z"/>
                     </connections>
                 </viewController>
