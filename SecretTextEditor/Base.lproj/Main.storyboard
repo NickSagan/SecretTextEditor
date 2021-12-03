@@ -40,7 +40,13 @@
                             <constraint firstItem="Ee6-lO-fhG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mqz-Yb-FxE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Zn8-1E-GQG"/>
+                    <navigationItem key="navigationItem" id="Zn8-1E-GQG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="2Wr-tq-5dF">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="EaD-Yn-uoi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="secret" destination="auh-GB-jke" id="oAG-Fh-K6z"/>
                     </connections>
