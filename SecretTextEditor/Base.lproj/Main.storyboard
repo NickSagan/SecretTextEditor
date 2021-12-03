@@ -28,9 +28,6 @@
                                 <rect key="frame" x="153.5" y="417" width="107" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="pinEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="b2d-gr-8HI"/>
-                                </connections>
                             </textField>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="auh-GB-jke">
                                 <rect key="frame" x="20" y="88" width="374" height="774"/>
