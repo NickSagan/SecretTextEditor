@@ -11,12 +11,39 @@ import LocalAuthentication
 class ViewController: UIViewController {
     
     var userPin = "6666"
+    var hasPassword = false
 
     @IBOutlet weak var pin: UITextField!
     @IBOutlet weak var secret: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let checkForPass = KeychainWrapper.standard.bool(forKey: "hasPassword") {
+            hasPassword = checkForPass
+            userPin =  KeychainWrapper.standard.string(forKey: "pin")!
+        }
+        
+        if !hasPassword {
+            let ac = UIAlertController(title: "Set your pin", message: nil, preferredStyle: .alert)
+
+            // create submit alert button
+            let submitAction = UIAlertAction(title: "Done", style: .default) {
+                // parameters we send into
+                [weak self, weak ac] _ in
+                // closure body
+                guard let input = ac?.textFields?[0].text else {return}
+                self?.userPin = input
+                self?.hasPassword = true
+                KeychainWrapper.standard.set(input, forKey: "pin")
+                KeychainWrapper.standard.set(true, forKey: "hasPassword")
+
+            }
+            
+            // add created button
+            ac.addAction(submitAction)
+            // present alert
+            present(ac, animated: true)
+        }
         
         // to make the text view adjust its content and scroll insets when the keyboard appears and disappears
         let notificationCenter = NotificationCenter.default
